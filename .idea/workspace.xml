@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da181c9d-0bd1-49a2-9f67-c850d3c7e5f0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherAppGUI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppLauncher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WeatherAppGUI.java" afterDir="false" />
+    <list default="true" id="da181c9d-0bd1-49a2-9f67-c850d3c7e5f0" name="Changes" comment="creating the gui and adding cursor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WeatherAppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WeatherAppGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +70,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715026304735</updated>
-      <workItem from="1715026305859" duration="1804000" />
+      <workItem from="1715026305859" duration="3425000" />
     </task>
+    <task id="LOCAL-00001" summary="creating the gui and adding cursor">
+      <created>1715028207039</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715028207039</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="creating the gui and adding cursor" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating the gui and adding cursor" />
   </component>
 </project>
