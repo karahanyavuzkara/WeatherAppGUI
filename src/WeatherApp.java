@@ -25,6 +25,37 @@ public class WeatherApp {
                 "latitude=" + latitude + "&longitude=" + longitude +
                 "&hourly=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Europe%2FMoscow";
 
+        try {
+            //call api and get response
+            HttpURLConnection conn = fetchApiResponse(urlString);
+
+            //check for response status
+            //200 - means that the conn was a success
+            if (conn.getResponseCode() != 200) {
+                System.out.println("Error: Could not connect to API");
+                return null;
+            }
+
+            //store resulting json data
+            StringBuilder resultJson = new StringBuilder();
+            Scanner scanner = new Scanner(conn.getInputStream());
+            while (scanner.hasNext()){
+                //read and store into the string builder
+                resultJson.append(scanner.nextLine());
+            }
+            //close the scanner
+            scanner.close();
+
+            //close url conn
+            conn.disconnect();
+
+            //parse through our data
+            JSONParser parser = new JSONParser();
+            JSONObject resultJsonObj = (JSONObject) parser.parse(String.valueOf(resultJson));
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return null;
     }
 
