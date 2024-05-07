@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da181c9d-0bd1-49a2-9f67-c850d3c7e5f0" name="Changes" comment="adding GUI elements and modifying them">
-      <change afterPath="$PROJECT_DIR$/src/WeatherApp.java" afterDir="false" />
+    <list default="true" id="da181c9d-0bd1-49a2-9f67-c850d3c7e5f0" name="Changes" comment="getting user's loc with Geolocation API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WeatherApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WeatherApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715026304735</updated>
-      <workItem from="1715026305859" duration="5563000" />
+      <workItem from="1715026305859" duration="7173000" />
     </task>
     <task id="LOCAL-00001" summary="creating the gui and adding cursor">
       <created>1715028207039</created>
@@ -86,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715034585655</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="getting user's loc with Geolocation API">
+      <created>1715111794751</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715111794751</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +103,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creating the gui and adding cursor" />
     <MESSAGE value="adding GUI elements and modifying them" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding GUI elements and modifying them" />
+    <MESSAGE value="getting user's loc with Geolocation API" />
+    <option name="LAST_COMMIT_MESSAGE" value="getting user's loc with Geolocation API" />
   </component>
 </project>

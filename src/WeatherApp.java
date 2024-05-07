@@ -14,10 +14,22 @@ public class WeatherApp {
     //fetch weatcher data for given loc
     public static JSONObject getWeatherData(String locationName){
         JSONArray locationData = getLocationData(locationName);
+
+        //extract latitude and longitude data
+        JSONObject location = (JSONObject) locationData.get(0);
+        double latitude = (double) location.get("latitude");
+        double longitude = (double) location.get("longitude");
+
+        //build API request URL with loc coordinates
+        String urlString = "https://api.open-meteo.com/v1/forecast?" +
+                "latitude=" + latitude + "&longitude=" + longitude +
+                "&hourly=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Europe%2FMoscow";
+
+        return null;
     }
 
     //retrieve geographic coordinates for given loc name
-    private static JSONArray getLocationData(String locationName) {
+    public static JSONArray getLocationData(String locationName) {
         //replace any whitespace in location name to + to adhere to API's request
         locationName = locationName.replaceAll(" ", "+");
 
@@ -51,15 +63,17 @@ public class WeatherApp {
 
                 //parse the JSON string into a JSON obj
                 JSONParser parser = new JSONParser();
-                JSONObject resultsJsonObj = (JSONObject) parser.parse(String.valueOf(resultJson))
+                JSONObject resultsJsonObj = (JSONObject) parser.parse(String.valueOf(resultJson));
 
                 //get the list of location data the API generated from the loc name
-
-            }
+                JSONArray locationData = (JSONArray) resultsJsonObj.get("results");
+                return locationData;            }
 
         }catch (Exception e){
             e.printStackTrace();
         }
+        //could not find loc
+        return null;
     }
     private static HttpURLConnection fetchApiResponse(String urlString){
         try {
