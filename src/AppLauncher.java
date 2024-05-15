@@ -9,6 +9,8 @@ public class AppLauncher {
                 new WeatherAppGUI().setVisible(true);
 
                // System.out.println(WeatherApp.getLocationData("Tokyo"));
+
+                System.out.println(WeatherApp.getCurrentTime());
             }
         });
     }
