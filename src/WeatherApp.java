@@ -65,6 +65,30 @@ public class WeatherApp {
             JSONArray time = (JSONArray) hourly.get("time");
             int index = findIndexOfCurrentTime(time);
 
+            //get temp
+            JSONArray temperatureData = (JSONArray) hourly.get("temperature_2m");
+            double temperature = (double) temperatureData.get(index);
+
+            //get weather code
+            JSONArray weathercode= (JSONArray) hourly.get("weathercode");
+            String weatherCondition = convertWeatherCode((long) weathercode.get(index));
+
+            //get humidity
+            JSONArray relativeHumidity = (JSONArray) hourly.get("relativehumidity_2m");
+            long humidity = (long) relativeHumidity.get(index);
+
+            //get windspeed
+            JSONArray windspeedData = (JSONArray) hourly.get("windspeed=10m");
+            double windspeed = (double) windspeedData.get(index);
+
+            //build the weather json data object that we are going to access in our frontend
+            JSONObject weatherData = new JSONObject();
+            weatherData.put("temperature", temperature);
+            weatherData.put("weather_condition", weatherCondition);
+            weatherData.put("humidity", humidity);
+            weatherData.put("windspeed", windspeed);
+
+            return weatherData;
 
         }catch (Exception e){
             e.printStackTrace();
@@ -141,6 +165,16 @@ public class WeatherApp {
 
     private static int findIndexOfCurrentTime(JSONArray timeList) {
         String currentTime = getCurrentTime();
+
+        //iterate through the time list and see which one matches our current time
+        for(int i = 0; i < timeList.size(); i++){
+            String time = (String) timeList.get(i);
+            if (time.equalsIgnoreCase(currentTime)){
+                //return the index
+                return i;
+            }
+        }
+
         return 0;
     }
     public static String getCurrentTime(){
@@ -154,6 +188,35 @@ public class WeatherApp {
         String formattedDateTime = currentDateTime.format(formatter);
         return formattedDateTime;
 
+    }
+    //convert the weather code to string
+    private static String convertWeatherCode (long weathercode){
+        String weatherCondition = "";
+        if (weathercode == 0L) {
+            weatherCondition = "Clear sky";
+        } else if (weathercode < 3L && weathercode >0L) {
+            weatherCondition ="Cloudy";
+        } else if (weathercode == 45 || weathercode == 48) {
+            weatherCondition = "Foggy";
+        }else if (weathercode == 51 || weathercode == 53 || weathercode == 55){
+            weatherCondition = "Drizzle";
+        } else if (weathercode == 56 || weathercode == 57) {
+            weatherCondition = "Freezing Drizzle";
+        } else if (weathercode == 71 || weathercode == 73 || weathercode == 75) {
+            weatherCondition = "Snow fall";
+        }else if (weathercode == 77){
+            weatherCondition = "Snow Grains";
+        }else if (weathercode == 80 || weathercode == 81 || weathercode == 82){
+            weatherCondition = "Rain showers";
+        }else if (weathercode == 85 || weathercode == 86) {
+            weatherCondition = "Snow showers";
+        }else if (weathercode == 95 ){
+            weatherCondition = "Thunderstorm";
+        } else if (weathercode == 96 || weathercode == 99) {
+            weatherCondition = "Thunderstorm with Hail";
+
+        }
+        return weatherCondition;
     }
 }
 
