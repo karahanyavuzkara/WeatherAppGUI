@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da181c9d-0bd1-49a2-9f67-c850d3c7e5f0" name="Changes" comment="retrieving weather data from weather forecast api">
+    <list default="true" id="da181c9d-0bd1-49a2-9f67-c850d3c7e5f0" name="Changes" comment="&#10;frontend issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WeatherAppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WeatherAppGUI.java" afterDir="false" />
     </list>
@@ -72,7 +72,7 @@
       <updated>1715026304735</updated>
       <workItem from="1715026305859" duration="8395000" />
       <workItem from="1715798253132" duration="950000" />
-      <workItem from="1715981377518" duration="3038000" />
+      <workItem from="1715981377518" duration="4139000" />
     </task>
     <task id="LOCAL-00001" summary="creating the gui and adding cursor">
       <created>1715028207039</created>
@@ -116,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715983105834</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&#10;frontend issues">
+      <created>1715984509320</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715984509320</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +134,7 @@
     <MESSAGE value="adding GUI elements and modifying them" />
     <MESSAGE value="getting user's loc with Geolocation API" />
     <MESSAGE value="retrieving weather data from weather forecast api" />
-    <option name="LAST_COMMIT_MESSAGE" value="retrieving weather data from weather forecast api" />
+    <MESSAGE value="&#10;frontend issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;frontend issues" />
   </component>
 </project>

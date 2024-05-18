@@ -114,32 +114,55 @@ public class WeatherAppGUI extends JFrame {
                 //depending on the condition, we will update the weather image that corresponds with the condition
                 switch (weatherCondition) {
                     case "Clear sky":
-                        weatherCondition.setIcon(loadImage("src/assets/clear.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/clear.png"));
                         break;
                     case "Cloudy":
-                        weatherCondition.setIcon(loadImage("src/assets/cloudy.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/cloudy.png"));
+                        break;
                     case "Foggy":
-                        weatherCondition.setIcon(loadImage("src/assets/cloudy.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/cloudy.png"));
+                        break;
                     case "Drizzle":
-                        weatherCondition.setIcon(loadImage("src/assets/rain.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/drizzle.png"));
+                        break;
                     case "Freezing Drizzle":
-                        weatherCondition.setIcon(loadImage("src/assets/rain.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/rain.png"));
+                        break;
                     case "Snow fall":
-                        weatherCondition.setIcon(loadImage("src/assets/snow.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/snow.png"));
+                        break;
                     case "Snow Grains":
-                        weatherCondition.setIcon(loadImage("src/assets/snow.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/snow.png"));
+                        break;
                     case "Rain showers":
-                        weatherCondition.setIcon(loadImage("src/assets/rain.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/rain.png"));
+                        break;
                     case "Snow showers":
-                        weatherCondition.setIcon(loadImage("src/assets/snow.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/snow.png"));
+                        break;
                     case "Thunderstorm":
-                        weatherCondition.setIcon(loadImage("src/assets/thunderstorm.png"));
+                        weatherConditionImage.setIcon(loadImage("src/assets/thunderstorm.png"));
+                        break;
                     case "Thunderstorm with Hail":
-                        weatherCondition.setIcon(loadImage("src/assets/thunderstorm.png"));
-
+                        weatherConditionImage.setIcon(loadImage("src/assets/thunderstorm.png"));
+                        break;
                 }
+                //update temperature text
+                double temperature = (double) weatherData.get("temperature");
+                temperatureText.setText(temperature + " C");
+
+                //update weather condition text
+                weatherConditionDesc.setText(weatherCondition);
+
+                //update humidity text
+                long humidity = (long) weatherData.get("humidity");
+                humidityText.setText("<html><b>Humidity</b> "+ humidity + "%</html>");
+
+                //update windspeed text
+                double windspeed = (double) weatherData.get("windspeed");
+                windspeedText.setText("<html><b>Windspeed</b> "+ windspeed + "km/h</html>");
             }
-        })
+        });
         add(searchButton);
     }
     //used to create images in our gui components
